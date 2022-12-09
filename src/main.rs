@@ -1,7 +1,6 @@
 fn some_func(foo: &[u16], bar: usize) {
     println!("Got: {:?}, {:?}", foo, bar);
 }
-
 fn main() {
     some_func(
         &[
