@@ -1,19 +1,7 @@
-#[derive(Debug)]
-enum Expectation {
-    ActualNumSteps(u64),
-    ProgramCounter(u16),
-    Register(u16, u16),
-}
-
-fn run_test(
-    instruction_prefix: &[u16],
-    data_prefix: &[u16],
-    max_steps: usize,
-    expectations: &[Expectation],
-) {
+fn run_test(instruction_prefix: &[u16], data_prefix: &[u16], max_steps: usize) {
     println!(
-        "Got: {:?}, {:?}, {:?}, {:?}",
-        instruction_prefix, data_prefix, max_steps, expectations
+        "Got: {:?}, {:?}, {:?}",
+        instruction_prefix, data_prefix, max_steps
     );
 }
 
@@ -35,12 +23,5 @@ fn main() {
         ],
         &[],
         5,
-        &[
-            Expectation::ProgramCounter(5),
-            Expectation::ActualNumSteps(5),
-            Expectation::Register(1, a),
-            Expectation::Register(2, result),
-            Expectation::Register(2, result),
-        ],
     );
 }
