@@ -1,7 +1,7 @@
-fn run_test(instruction_prefix: &[u16], data_prefix: &[u16], max_steps: usize) {
+fn run_test(instruction_prefix: &[u16], max_steps: usize) {
     println!(
-        "Got: {:?}, {:?}, {:?}",
-        instruction_prefix, data_prefix, max_steps
+        "Got: {:?}, {:?}",
+        instruction_prefix, max_steps
     );
 }
 
@@ -17,7 +17,6 @@ fn main() {
             0x60,   // binary.function r2, r1
                     // asdf
         ],
-        &[],
         5,
     );
 }
